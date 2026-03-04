@@ -1,0 +1,14 @@
+name: Deploy to Coolify
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to Coolify
+      run: |
+        curl -X GET "https://coolify.tonypayet.com/api/v1/deploy?uuid=z8kc4kcggw8o8ggks08gko4s" \
+          -H "Authorization: Bearer ${{ secrets.COOLIFY_API_TOKEN }}"
