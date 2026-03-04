@@ -9,7 +9,16 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - name: Deploy to Coolify
       run: |
-        curl -X GET "https://coolify.tonypayet.com/api/v1/deploy?uuid=z8kc4kcggw8o8ggks08gko4s" \
-          -H "Authorization: Bearer ${{ secrets.COOLIFY_API_TOKEN }}"
+        curl -X POST "https://coolify.tonypayet.com/api/v1/deploy?uuid=z8kc4kcggw8o8ggks08gko4s&force=true" \
+          -H "Authorization: Bearer ${{ secrets.COOLIFY_API_TOKEN }}" \
+          -H "Accept: application/json" || echo "API call failed, trying alternative..."
+    - name: Trigger redeploy via webhook
+      if: failure()
+      run: |
+        curl -X POST "https://coolify.tonypayet.com/webhooks/source/github/events" \
+          -H "Content-Type: application/json" \
+          -H "X-GitHub-Event: push" \
+          -d '{"ref":"refs/heads/main","repository":{"clone_url":"https://github.com/tonyPayetDev/top-moteur-oi-pieces-auto-reunion.git"}}' || echo "Webhook failed"
