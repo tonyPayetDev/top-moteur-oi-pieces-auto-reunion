@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a365d"/>
+      <stop offset="100%" style="stop-color:#2c5282"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b35"/>
+      <stop offset="100%" style="stop-color:#ff8c5a"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#heroGrad)"/>
+  
+  <!-- Garage/Workshop elements -->
+  <rect x="50" y="100" width="200" height="400" fill="#1a202c" opacity="0.3"/>
+  <rect x="550" y="50" width="200" height="500" fill="#1a202c" opacity="0.3"/>
+  
+  <!-- Car silhouette -->
+  <ellipse cx="400" cy="450" rx="180" ry="40" fill="#2d3748"/>
+  <path d="M250 400 Q250 350 300 340 L500 340 Q550 350 550 400 L550 420 L250 420 Z" fill="#4a5568"/>
+  <circle cx="300" cy="430" r="35" fill="#1a202c"/>
+  <circle cx="300" cy="430" r="20" fill="#718096"/>
+  <circle cx="500" cy="430" r="35" fill="#1a202c"/>
+  <circle cx="500" cy="430" r="20" fill="#718096"/>
+  
+  <!-- Engine graphic -->
+  <g transform="translate(600, 150)">
+    <rect x="0" y="30" width="120" height="80" rx="10" fill="url(#accentGrad)"/>
+    <rect x="20" y="10" width="30" height="30" rx="5" fill="#cbd5e0"/>
+    <rect x="70" y="10" width="30" height="30" rx="5" fill="#cbd5e0"/>
+    <rect x="-15" y="50" width="30" height="40" rx="8" fill="#a0aec0"/>
+    <rect x="105" y="50" width="30" height="40" rx="8" fill="#a0aec0"/>
+    <circle cx="60" cy="70" r="25" fill="#fff"/>
+    <circle cx="60" cy="70" r="12" fill="#2d3748"/>
+  </g>
+  
+  <!-- Tools -->
+  <g transform="translate(80, 200)">
+    <rect x="0" y="0" width="15" height="150" fill="#e2e8f0" rx="2"/>
+    <rect x="-10" y="0" width="35" height="40" fill="#ff6b35" rx="3"/>
+  </g>
+  
+  <g transform="translate(130, 250)">
+    <rect x="0" y="0" width="100" height="12" fill="#cbd5e0" rx="2"/>
+    <circle cx="100" cy="6" r="20" fill="#a0aec0"/>
+  </g>
+  
+  <!-- Gear icons -->
+  <g transform="translate(150, 450)">
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#ff6b35" stroke-width="3" opacity="0.5"/>
+    <circle cx="0" cy="0" r="25" fill="none" stroke="#ff6b35" stroke-width="3" opacity="0.5"/>
+    <circle cx="0" cy="0" r="10" fill="#ff6b35" opacity="0.5"/>
+  </g>
+  
+  <!-- Decorative circles -->
+  <circle cx="700" cy="500" r="100" fill="url(#accentGrad)" opacity="0.1"/>
+  <circle cx="100" cy="100" r="80" fill="#fff" opacity="0.05"/>
+</svg>

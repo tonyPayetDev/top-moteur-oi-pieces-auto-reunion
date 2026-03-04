@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="suspensionGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b35"/>
+      <stop offset="100%" style="stop-color:#e55a2b"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="90" fill="#f7fafc"/>
+  
+  <!-- Shock absorber body -->
+  <rect x="85" y="50" width="30" height="100" rx="5" fill="url(#suspensionGrad)"/>
+  
+  <!-- Spring coils -->
+  <path d="M70 60 Q90 70 70 80 Q90 90 70 100 Q90 110 70 120 Q90 130 70 140" 
+        fill="none" stroke="#4a5568" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Top mount -->
+  <rect x="75" y="30" width="50" height="25" rx="5" fill="#2d3748"/>
+  <circle cx="100" cy="42" r="8" fill="#cbd5e0"/>
+  
+  <!-- Bottom mount -->
+  <rect x="75" y="145" width="50" height="25" rx="5" fill="#2d3748"/>
+  <circle cx="100" cy="157" r="8" fill="#cbd5e0"/>
+  
+  <!-- Piston rod -->
+  <rect x="95" y="40" width="10" height="20" fill="#718096"/>
+</svg>

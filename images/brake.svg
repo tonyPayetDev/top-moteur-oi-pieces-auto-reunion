@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="brakeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b35"/>
+      <stop offset="100%" style="stop-color:#e55a2b"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="90" fill="#f7fafc"/>
+  
+  <!-- Brake disc -->
+  <circle cx="100" cy="100" r="70" fill="#4a5568"/>
+  <circle cx="100" cy="100" r="55" fill="#718096"/>
+  <circle cx="100" cy="100" r="45" fill="#4a5568"/>
+  
+  <!-- Ventilation holes pattern -->
+  <circle cx="100" cy="55" r="4" fill="#2d3748"/>
+  <circle cx="145" cy="100" r="4" fill="#2d3748"/>
+  <circle cx="100" cy="145" r="4" fill="#2d3748"/>
+  <circle cx="55" cy="100" r="4" fill="#2d3748"/>
+  
+  <!-- Center hub -->
+  <circle cx="100" cy="100" r="25" fill="#cbd5e0"/>
+  <circle cx="100" cy="100" r="12" fill="#2d3748"/>
+  
+  <!-- Brake caliper -->
+  <path d="M140 60 Q170 90 170 130 L130 130 Q130 100 140 60" fill="url(#brakeGrad)"/>
+  <rect x="135" y="80" width="20" height="40" rx="3" fill="#e55a2b"/>
+</svg>
