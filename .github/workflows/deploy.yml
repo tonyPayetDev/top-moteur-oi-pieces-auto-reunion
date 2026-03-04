@@ -10,15 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Deploy to Coolify
+    
+    - name: Setup SSH
+      uses: webfactory/ssh-agent@v0.8.0
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        log-public-key: false
+    
+    - name: Add host to known hosts
       run: |
-        curl -X POST "https://coolify.tonypayet.com/api/v1/deploy?uuid=z8kc4kcggw8o8ggks08gko4s&force=true" \
-          -H "Authorization: Bearer ${{ secrets.COOLIFY_API_TOKEN }}" \
-          -H "Accept: application/json" || echo "API call failed, trying alternative..."
-    - name: Trigger redeploy via webhook
-      if: failure()
+        mkdir -p ~/.ssh
+        ssh-keyscan -H 158.220.127.234 >> ~/.ssh/known_hosts
+    
+    - name: Deploy via SSH
       run: |
-        curl -X POST "https://coolify.tonypayet.com/webhooks/source/github/events" \
-          -H "Content-Type: application/json" \
-          -H "X-GitHub-Event: push" \
-          -d '{"ref":"refs/heads/main","repository":{"clone_url":"https://github.com/tonyPayetDev/top-moteur-oi-pieces-auto-reunion.git"}}' || echo "Webhook failed"
+        ssh root@158.220.127.234 "docker exec coolify bash -c 'cd /var/www/html && php artisan app:deploy z8kc4kcggw8o8ggks08gko4s'" || echo "SSH deployment failed"
